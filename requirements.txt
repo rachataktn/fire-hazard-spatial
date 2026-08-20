@@ -5,3 +5,5 @@ matplotlib
 Pillow
 PyYAML
 opencv-python-headless
+scipy
+scikit-learn

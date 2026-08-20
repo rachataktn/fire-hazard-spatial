@@ -8,6 +8,8 @@ venv/
 
 outputs/*
 !outputs/.gitkeep
+!outputs/*/
+!outputs/*/.gitkeep
 work/
 
 *.pt
