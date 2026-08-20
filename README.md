@@ -19,23 +19,27 @@ READY FOR FULL EXPERIMENT: YES
 
 Only after that should the full YOLO26 experiment be run.
 
-The notebook supports two dataset forms:
+The notebook now uses three dataset folders:
 
-- Segmentation: your current YOLO polygon labels.
-- Detection: a separate converted copy where polygons become bounding boxes.
+- Source segmentation: your original YOLO labels, left unchanged.
+- Clean segmentation: a copied dataset where 5-value box lines are converted into rectangle polygons.
+- Detection: a copied dataset where polygons are converted into bounding boxes.
 
 Default Colab paths:
 
 ```python
 RUN_MODE = "both"
+AUTO_CREATE_CLEAN_SEGMENTATION_DATASET = True
 AUTO_CREATE_DETECTION_DATASET = True
+OVERWRITE_DERIVED_DATASETS = True
 
-SEG_DATASET_ROOT = "/content/drive/MyDrive/fire_hazard_dataset/Fire Hazard YOLO26"
+SEG_SOURCE_DATASET_ROOT = "/content/drive/MyDrive/fire_hazard_dataset/Fire Hazard YOLO26"
+SEG_CLEAN_DATASET_ROOT = "/content/drive/MyDrive/fire_hazard_dataset/Fire Hazard YOLO26 Segmentation Clean"
 DET_DATASET_ROOT = "/content/drive/MyDrive/fire_hazard_dataset/Fire Hazard YOLO26 Detection"
 OUTPUT_ROOT = "/content/drive/MyDrive/fire_hazard_experiment_outputs"
 ```
 
-`AUTO_CREATE_DETECTION_DATASET` writes the converted detection dataset to `DET_DATASET_ROOT` without modifying the original segmentation dataset.
+The original source dataset is not modified. Derived datasets are safe to recreate.
 
 ## Repository Layout
 
